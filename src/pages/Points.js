@@ -39,7 +39,9 @@ const Points = () => {
         }
     }
 
-    return ( 
+    return (
+        <div className='flex flex-col sm:flex-row w-screen h-screen' >
+            <div className='flex flex-col w-screen sm:w-[60%] h-fit' >
         <div className='flex flex-col w-screen h-screen font-Rajdhani text-violet-900 p-[5%] pt-14 sm:p-[5%]' >
            <a href='/programs'><p className='text-md font-medium' >All Programs</p></a>
             <p className='text-4xl font-bold mt-5'>Setup Points Program</p>
@@ -62,6 +64,11 @@ const Points = () => {
             <button className='w-fit h-fit px-4 py-2 bg-violet-900 text-white font-semibold rounded-2xl mt-10' onClick={addprogram} >Launch Program</button>
             <ToastContainer/>
         </div>
+        </div>
+        <div className='flex flex-col w-screen sm:w-[40%] h-fit bg-blue-300' >
+            <label>Merchant Details</label>
+        </div>
+        </div> 
      );
 }
  
