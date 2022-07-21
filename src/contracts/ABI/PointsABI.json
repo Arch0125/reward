@@ -1,0 +1,196 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pid",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_upoint",
+				"type": "uint256"
+			}
+		],
+		"name": "addPoint",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_reward",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_multiplier",
+				"type": "string"
+			}
+		],
+		"name": "addProgram",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pid",
+				"type": "uint256"
+			}
+		],
+		"name": "approveCustomer",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "customers",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "customer",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "point",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "loyalty",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "merchants",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "pid",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "reward",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "multiplier",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "programs",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "pid",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "reward",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "multiplier",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pid",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_pused",
+				"type": "uint256"
+			}
+		],
+		"name": "redeemPoint",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]
