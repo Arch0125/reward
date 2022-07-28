@@ -3,6 +3,7 @@ import GetContract from '../hooks/GetContact';
 import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import GetAccount from '../hooks/GetAccount';
 
 const Points = () => {
 
@@ -39,6 +40,8 @@ const Points = () => {
         }
     }
 
+    const addr = GetAccount();
+
     return (
         <div className='flex flex-col sm:flex-row w-screen h-screen' >
             <div className='flex flex-col w-screen sm:w-[60%] h-fit' >
@@ -65,8 +68,36 @@ const Points = () => {
             <ToastContainer/>
         </div>
         </div>
-        <div className='flex flex-col w-screen sm:w-[40%] h-fit bg-blue-300' >
-            <label>Merchant Details</label>
+        <div className='flex flex-col w-screen sm:w-[40%] h-fit font-Rajdhani' >
+            <div className=' flex flex-col w-[90%] h-fit border-2 border-violet-900 border-opacity-40 mt-[15%] p-4 rounded-2xl ' >
+                <label className='font-bold text-2xl text-violet-900 text-center' >Details</label>
+                <hr className='m-2 border-violet-700' />
+                <label className='text-xl font-semibold text-violet-900' >Merchant Name : </label>
+                <label className='text-xl font-semibold text-violet-900' >Merchant Address : {addr} </label>
+                <label className='text-xl font-semibold text-violet-900' >USDC Balance : </label>
+            </div> 
+            <div className=' flex flex-col w-[90%] h-fit border-2 border-violet-900 border-opacity-40 mt-[8%] p-4 rounded-2xl ' >
+                <label className='font-bold text-2xl text-violet-900 text-center' >Program Details</label>
+                <label className='text-xl font-semibold text-violet-900' >Program Name : </label>
+                <label className='text-xl font-semibold text-violet-900' >Program Reward : </label>
+                <hr className='m-2 border-violet-700' />
+                <table className='text-center'>
+                    <thead className='bg-violet-100' >
+                        <tr>
+                            <th className='text-xl font-semibold text-violet-900' >Name</th>
+                            <th className='text-xl font-semibold text-violet-900' >Address</th>
+                            <th className='text-xl font-semibold text-violet-900' >Points</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td className='text-xl font-semibold text-violet-900' >John Doe</td>
+                            <td className='text-xl font-semibold text-violet-900' >123 Main St</td>
+                            <td className='text-xl font-semibold text-violet-900' >100</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>  
         </div>
         </div> 
      );
