@@ -5,7 +5,7 @@ function GetContract() {
   const { data: signer, isError, isLoading } = useSigner()
 
   const contract = useContract({
-    addressOrName: '0x24adfeA92DbfEe9982327bA7bF5942b50a51e555',
+    addressOrName: '0x2dea6d66FEe8489b161747abdBa83457cd028CFd',
     contractInterface: PointsABI,
     signerOrProvider: signer,
   })

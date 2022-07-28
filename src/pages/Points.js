@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import GetContract from '../hooks/GetContact';
 import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
@@ -10,9 +10,13 @@ const Points = () => {
     const[name,setName] = React.useState('');
     const[reward,setReward] = React.useState('');
     const[multi,setMulti] = React.useState('');
+    const[prg,setPrg] = React.useState({});
 
     const contract = GetContract();
-    console.log(contract);
+
+    useEffect(() => {
+        getProgram();
+    });
 
     const success = () => toast.success("Transaction Submitted" ,{
         position: "bottom-center",
@@ -37,6 +41,17 @@ const Points = () => {
             pauseOnHover: true,
             draggable: true,
             progress: undefined,});
+        }
+    }
+
+    const getProgram=async()=>{
+        try{
+            var id = await contract.getPID();
+            id = id.toNumber();
+            var program = await contract.getProgram(id);
+            setPrg(program);
+        }catch(err){
+            console.log(err);
         }
     }
 
@@ -78,8 +93,8 @@ const Points = () => {
             </div> 
             <div className=' flex flex-col w-[90%] h-fit border-2 border-violet-900 border-opacity-40 mt-[8%] p-4 rounded-2xl ' >
                 <label className='font-bold text-2xl text-violet-900 text-center' >Program Details</label>
-                <label className='text-xl font-semibold text-violet-900' >Program Name : </label>
-                <label className='text-xl font-semibold text-violet-900' >Program Reward : </label>
+                <label className='text-xl font-semibold text-violet-900' >Program Name : {prg[1]}</label>
+                <label className='text-xl font-semibold text-violet-900' >Program Reward : {prg.reward}</label>
                 <hr className='m-2 border-violet-700' />
                 <table className='text-center'>
                     <thead className='bg-violet-100' >
